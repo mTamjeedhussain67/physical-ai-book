@@ -7,20 +7,20 @@ const config: Config = {
   tagline: 'A Modern Technical Guide to Physical AI & Humanoid Robotics',
   favicon: 'img/favicon.ico',
 
-  // Correct production URL for Vercel
-  url: 'https://physical-ai-book.vercel.app', // ❗️ NO GITHUB URL
-  baseUrl: '/',                                // ❗️ Vercel always uses "/"
+  // Correct Vercel production URL
+  url: 'https://physical-ai-book.vercel.app',
+  baseUrl: '/',
 
-  // GitHub pages deployment config (ignored by Vercel but kept for repo)
+  // GitHub metadata
   organizationName: 'mTamjeedhussain67',
   projectName: 'physical-ai-book',
   deploymentBranch: 'gh-pages',
 
-  // Required for Vercel static export
-  output: 'static',
+  customFields: {
+    output: 'static',
+  },
 
   trailingSlash: false,
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -35,7 +35,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/mTamjeedhussain67/physical-ai-book/tree/main/',
+          editUrl:
+            'https://github.com/mTamjeedhussain67/physical-ai-book/tree/main/',
         },
         blog: false,
         theme: {
@@ -50,7 +51,7 @@ const config: Config = {
     navbar: {
       title: 'Physical AI & Humanoid Robotics',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Site Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -67,6 +68,7 @@ const config: Config = {
         },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
@@ -82,18 +84,9 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
+            {label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/docusaurus'},
+            {label: 'Discord', href: 'https://discordapp.com/invite/docusaurus'},
+            {label: 'X', href: 'https://x.com/docusaurus'},
           ],
         },
         {
@@ -106,13 +99,10 @@ const config: Config = {
           ],
         },
       ],
+
       copyright: `Copyright © ${new Date().getFullYear()} Physical AI Book. Built with Docusaurus.`,
     },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
-  } satisfies Preset.ThemeConfig,
+  },
 };
 
 export default config;
