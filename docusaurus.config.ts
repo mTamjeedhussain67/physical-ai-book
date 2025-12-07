@@ -7,14 +7,17 @@ const config: Config = {
   tagline: 'A Modern Technical Guide to Physical AI & Humanoid Robotics',
   favicon: 'img/favicon.ico',
 
-  // Production URL
-  url: 'https://github.com/mTamjeedhussain67',
-  baseUrl: '/physical-ai-book/',
+  // Correct production URL for Vercel
+  url: 'https://physical-ai-book.vercel.app', // ❗️ NO GITHUB URL
+  baseUrl: '/',                                // ❗️ Vercel always uses "/"
 
-  // GitHub pages deployment config
-  organizationName: '1hmed1',
+  // GitHub pages deployment config (ignored by Vercel but kept for repo)
+  organizationName: 'mTamjeedhussain67',
   projectName: 'physical-ai-book',
   deploymentBranch: 'gh-pages',
+
+  // Required for Vercel static export
+  output: 'static',
 
   trailingSlash: false,
 
